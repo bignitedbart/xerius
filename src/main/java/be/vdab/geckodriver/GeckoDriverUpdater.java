@@ -11,7 +11,7 @@ public class GeckoDriverUpdater {
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     public void updateGeckoDriverToLatest() throws IOException, URISyntaxException {
-        if(null != System.getProperty("useLatestGeckoDriver")) {
+        if(null != System.getProperty("useLatestGeckoDriver") || null != System.getProperty("useLatest")) {
             LOGGER.info("Downloading latest geckodriver ...");
             new GeckoDriverDownloader().downloadBinary();
             LOGGER.info("Download successfull. Unzipping ...");

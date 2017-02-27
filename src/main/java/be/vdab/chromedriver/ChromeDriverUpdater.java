@@ -11,7 +11,7 @@ public class ChromeDriverUpdater {
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     public void updateChromeDriverToLatest() throws IOException, URISyntaxException {
-        if(null != System.getProperty("useLatestChromeDriver")) {
+        if(null != System.getProperty("useLatestChromeDriver") || null != System.getProperty("useLatest")) {
             LOGGER.info("Downloading latest chromedriver ...");
             new ChromeDriverDownloader().downloadBinary();
             LOGGER.info("Download successfull. Unzipping ...");

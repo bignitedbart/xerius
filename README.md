@@ -33,9 +33,15 @@ De corporate proxy zelf kan geconfigureerd worden in application.properties.
 
 Elke testrun kan opgenomen worden door gebruik te maken van screen capturing. De functionaliteit hiervan zit in de klasse SeleniumScreenRecorder. Standaard wordt de output gesaved naar de user.home folder van de gebruiker, bijvoorbeeld C:\Users\philippe.
 
-## Automatisch updaten van ChromeDriver
+## Automatisch updaten van drivers
 
-Door de systeemvariabele *useLatestChromeDriver* mee te geven zal de laatste versie van ChromeDriver gedownload worden naar de resources-folder. Deze kan dan gebruikt worden voor de testen.
+Er kunnen enkele variabelen meegegeven worden om het automatisch downloaden van de drivers in te schakelen:
+
+- *useLatestChromeDriver*
+- *useLatestGeckoDriver*
+- *useLatest*
+ 
+*useLatestxxx* zal de meest recente versie van driver xxx downloaden. *useLatest* zal de meest recente versie van alle drivers downloaden.
 
 
 ### Todo
