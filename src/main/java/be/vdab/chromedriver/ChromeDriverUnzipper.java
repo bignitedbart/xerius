@@ -13,24 +13,21 @@ public class ChromeDriverUnzipper {
     private final String FILENAME = "chromedriver.exe";
     private File zip;
     private File binary;
+    private Unzipper unzipper;
 
     public ChromeDriverUnzipper() {
+        unzipper = new Unzipper();
         zip = new File(SOURCE);
         binary = new File(DESTINATION + FILENAME);
     }
 
     public void unzipChromedriver() throws IOException {
-        Unzipper unzipper = new Unzipper();
         if (!zip.exists()) {
             throw new RuntimeException("Zip-file " + SOURCE + " does not exist!");
         }
         if (binary.exists()) {
             FileUtils.forceDelete(binary);
         }
-        unzipper.unzip(FILENAME, SOURCE, DESTINATION);
-    }
-
-    private void deleteZip() {
-
+        unzipper.unZipIt(SOURCE, DESTINATION);
     }
 }

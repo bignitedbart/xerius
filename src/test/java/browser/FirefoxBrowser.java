@@ -1,5 +1,6 @@
 package browser;
 
+import be.vdab.geckodriver.GeckoDriverUpdater;
 import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -9,6 +10,7 @@ import utilities.ProxyManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class FirefoxBrowser implements Browser {
 
@@ -17,8 +19,9 @@ public class FirefoxBrowser implements Browser {
     private ProxyManager proxyManager;
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-    public FirefoxBrowser() {
+    public FirefoxBrowser() throws IOException, URISyntaxException {
         proxyManager = new ProxyManager();
+        new GeckoDriverUpdater().updateGeckoDriverToLatest();
         setDriver();
     }
 

@@ -1,0 +1,22 @@
+package be.vdab.geckodriver;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+
+public class GeckoDriverUpdater {
+
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+
+    public void updateGeckoDriverToLatest() throws IOException, URISyntaxException {
+        if(null != System.getProperty("useLatestGeckoDriver")) {
+            LOGGER.info("Downloading latest geckodriver ...");
+            new GeckoDriverDownloader().downloadBinary();
+            LOGGER.info("Download successfull. Unzipping ...");
+            new GeckoDriverUnzipper().unzipGeckodriver();
+            LOGGER.info("GeckoDriver.exe updated to latest version");
+        }
+    }
+}

@@ -1,36 +1,43 @@
 package be.vdab.utilities;
 
-import net.lingala.zip4j.core.ZipFile;
-import net.lingala.zip4j.exception.ZipException;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 public class Unzipper {
 
-    public void unzip(String fileName, String source, String destination){
+    public void unZipIt(String zipFile, String outputFolder) {
+
+        byte[] buffer = new byte[1024];
+
         try {
-            ZipFile zipFile = new ZipFile(source);
-            checkZipExistence(zipFile);
-            zipFile.extractFile(fileName, destination);
-            removeZipFileAfterExtraction(fileName, source, destination);
-        } catch (ZipException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+            ZipInputStream zis = new ZipInputStream(new FileInputStream(zipFile));
+            ZipEntry ze = zis.getNextEntry();
 
-    private void removeZipFileAfterExtraction(String fileName, String source, String destination) throws IOException {
-        if (new File(destination + fileName).exists()){
-            FileUtils.forceDelete(new File(source));
-        }
-    }
+            while (ze != null) {
+                String fileName = ze.getName();
+                File newFile = new File(outputFolder + File.separator + fileName);
+                new File(newFile.getParent()).mkdirs();
+                FileOutputStream fos = new FileOutputStream(newFile);
 
-    private void checkZipExistence(ZipFile zipFile) {
-        if (!zipFile.getFile().exists()) {
-            throw new RuntimeException("Zipfile " + zipFile.getFile().getAbsolutePath() + " does not exist!");
+                int len;
+                while ((len = zis.read(buffer)) > 0) {
+                    fos.write(buffer, 0, len);
+                }
+
+                fos.close();
+                ze = zis.getNextEntry();
+            }
+            zis.closeEntry();
+            zis.close();
+            FileUtils.forceDelete(new File(zipFile));
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 }
