@@ -1,5 +1,6 @@
 package browser;
 
+import be.vdab.edgedriver.EdgeDriverUpdater;
 import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -9,6 +10,7 @@ import utilities.ProxyManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class EdgeBrowser implements Browser {
 
@@ -17,8 +19,9 @@ public class EdgeBrowser implements Browser {
     private ProxyManager proxyManager;
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-    public EdgeBrowser() {
+    public EdgeBrowser() throws IOException, URISyntaxException {
         proxyManager = new ProxyManager();
+        new EdgeDriverUpdater().updateEdgeDriverToLatest();
         setDriver();
     }
 

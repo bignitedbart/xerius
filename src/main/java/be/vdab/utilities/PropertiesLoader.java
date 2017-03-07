@@ -47,4 +47,17 @@ public class PropertiesLoader {
 
     public String getChromeDriverReleaseUrl() { return properties.getProperty("chromedriver.release.url"); }
 
+    public String getEdgeDriverReleaseUrl() { return properties.getProperty("edgedriver.release.url");}
+
+    public String getChromeDriverBaseUrl(){ return properties.getProperty("chromedriver.base.url");}
+
+    public String getEdgeDriverBaseUrl(){ return properties.getProperty("edgedriver.base.url");}
+
+    public String getChromePrefix() { return properties.getProperty("FILENAME_PREFIX_CHROME");}
+
+    public String getChromeSuffix() { return properties.getProperty("FILENAME_SUFFIX_CHROME");}
+
+    public String getFirefoxSuffix() { return properties.getProperty("FILENAME_PREFIX_FIREFOX");}
+
+    public String getFirefoxPrefix() { return properties.getProperty("FILENAME_PREFIX_FIREFOX");}
 }

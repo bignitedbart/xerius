@@ -7,13 +7,16 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 public class EdgeTest {
 
     private EdgeBrowser edgeBrowser;
     private RemoteWebDriver driver;
 
     @Before
-    public void setup() {
+    public void setup() throws IOException, URISyntaxException{
         edgeBrowser = new EdgeBrowser();
         driver = edgeBrowser.getDriver();
     }

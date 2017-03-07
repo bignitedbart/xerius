@@ -1,5 +1,6 @@
 package be.vdab.chromedriver;
 
+import be.vdab.DriverDownloader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +14,7 @@ public class ChromeDriverUpdater {
     public void updateChromeDriverToLatest() throws IOException, URISyntaxException {
         if(null != System.getProperty("useLatestChromeDriver") || null != System.getProperty("useLatest")) {
             LOGGER.info("Downloading latest chromedriver ...");
-            new ChromeDriverDownloader().downloadBinary();
+            new DriverDownloader().downloadBinary("Chrome");
             LOGGER.info("Download successfull. Unzipping ...");
             new ChromeDriverUnzipper().unzipChromedriver();
             LOGGER.info("Chromedriver.exe updated to latest version");

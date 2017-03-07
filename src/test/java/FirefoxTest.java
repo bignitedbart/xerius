@@ -13,7 +13,7 @@ public class FirefoxTest {
     private RemoteWebDriver driver;
 
     @Before
-    public void setup() {
+    public void setup() throws Exception {
         geckoDriverService = new FirefoxBrowser();
         driver = geckoDriverService.getDriver();
     }
