@@ -12,7 +12,7 @@ public class EdgeDriverUpdater {
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     public void updateEdgeDriverToLatest() throws IOException, URISyntaxException {
-        if(null != System.getProperty("useLatestChromeDriver") || null != System.getProperty("useLatest")) {
+        if(null != System.getProperty("useLatestEdgeDriver") || null != System.getProperty("useLatest")) {
             LOGGER.info("Downloading latest edgedriver ...");
             new DriverDownloader().downloadBinary("Edge");
             LOGGER.info("microsoftwebdriver.exe updated to latest version");

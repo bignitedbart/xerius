@@ -39,6 +39,8 @@ Er kunnen enkele variabelen meegegeven worden om het automatisch downloaden van 
 
 - *useLatestChromeDriver*
 - *useLatestGeckoDriver*
+- *useLatestIEDriver*
+- *useLatestEdgeDriver*
 - *useLatest*
  
 *useLatestxxx* zal de meest recente versie van driver xxx downloaden. *useLatest* zal de meest recente versie van alle drivers downloaden.

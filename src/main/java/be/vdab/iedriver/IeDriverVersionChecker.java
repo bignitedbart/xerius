@@ -1,4 +1,4 @@
-package be.vdab.chromedriver;
+package be.vdab.iedriver;
 
 import be.vdab.utilities.DownloadHandler;
 import be.vdab.utilities.PropertiesLoader;
@@ -8,13 +8,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 
-public class ChromeDriverVersionChecker  {
+public class IeDriverVersionChecker {
 
     private final PropertiesLoader LOADER = PropertiesLoader.getInstance();
     private DownloadHandler downloadHandler;
 
-    public ChromeDriverVersionChecker() throws IOException {
-        this.downloadHandler = new DownloadHandler(LOADER.getChromeDriverReleaseUrl());
+    public IeDriverVersionChecker() throws IOException {
+        this.downloadHandler = new DownloadHandler(LOADER.getIEDriverBaseUrl());
     }
 
     public String getVersion() throws IOException {
@@ -23,6 +23,12 @@ public class ChromeDriverVersionChecker  {
     }
 
     private InputStream getContentFromResponse() throws IOException {
+        System.out.println(downloadHandler.getEntity().getContent());
         return downloadHandler.getEntity().getContent();
     }
+
+
+
+
+
 }

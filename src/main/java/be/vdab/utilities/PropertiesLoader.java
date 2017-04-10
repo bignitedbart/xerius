@@ -53,11 +53,17 @@ public class PropertiesLoader {
 
     public String getEdgeDriverBaseUrl(){ return properties.getProperty("edgedriver.base.url");}
 
+    public String getIEDriverBaseUrl(){ return properties.getProperty("internetexplorer.base.url");}
+
     public String getChromePrefix() { return properties.getProperty("FILENAME_PREFIX_CHROME");}
 
     public String getChromeSuffix() { return properties.getProperty("FILENAME_SUFFIX_CHROME");}
 
-    public String getFirefoxSuffix() { return properties.getProperty("FILENAME_PREFIX_FIREFOX");}
+    public String getFirefoxSuffix() { return properties.getProperty("FILENAME_SUFFIX_FIREFOX");}
 
     public String getFirefoxPrefix() { return properties.getProperty("FILENAME_PREFIX_FIREFOX");}
+
+    public String getIePrefix(){ return properties.getProperty("FILENAME_PREFIX_IE");}
+
+    public String getIeSuffix(){ return properties.getProperty("FILENAME_SUFFIX_IE");}
 }
