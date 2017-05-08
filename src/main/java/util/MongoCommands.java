@@ -1,35 +1,34 @@
-package utils;
+package util;
 
 import com.mongodb.*;
-import com.mongodb.client.MongoCollection;
 
-/**
- * Created by cleenma on 4/10/2017.
- */
+public class MongoCommands {
 
-public class MongoCommands extends Mongo {
-
-    public void connectToDB(String url, String databaseName, String collectionName){
-        MongoClient mongo = new MongoClient(url);
+    public DBCollection connectToMongoDB(String URL, String databaseName, String collectionName){
+        MongoClient mongo = new MongoClient(URL);
         DB db = (DB) mongo.getDatabase(databaseName);
 
         DBCollection table = db.getCollection(collectionName);
+        return table;
     }
 
-    public void findEverythingInCollection(MongoCollection selectedCollection){
-        DBCursor cursor = (DBCursor) selectedCollection.find();
-        System.out.println(cursor.next());
+    public void findFirstRecord(DBObject value, DBCollection table){
+        DBObject dbObject = table.findOne(value);
+        System.out.println(dbObject);
     }
 
-    public void findValueInCollection(MongoCollection selectedCollection, BasicDBObject query){
-        BasicDBObject whereQuery = new BasicDBObject();
-        whereQuery.put("number", 5);
-        DBCursor cursor = (DBCursor) selectedCollection.find(whereQuery);
-        while (cursor.hasNext()){
+    public void findAllValue(DBObject value, DBCollection table){
+        DBCursor cursor = table.find(value);
+        while(cursor.hasNext()) {
             System.out.println(cursor.next());
         }
     }
 
-
+    public void findSpecificField(DBObject fieldName, DBObject value, DBCollection table){
+        DBCursor cursor = table.find(value, fieldName);
+        while (cursor.hasNext()) {
+            System.out.println(cursor.next());
+        }
+    }
 
 }
