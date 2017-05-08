@@ -1,7 +1,7 @@
 package browser;
 
 
-import be.vdab.chromedriver.ChromeDriverUpdater;
+import be.vdab.drivers.chromedriver.ChromeDriverUpdater;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriverService;

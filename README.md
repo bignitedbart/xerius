@@ -50,3 +50,5 @@ Er kunnen enkele variabelen meegegeven worden om het automatisch downloaden van 
 - Screen recording parameterizeren
 - Command-line switch inbouwen om browser te kiezen
 - Headers toevoegen om authenticatie te bypassen (via proxy)
+
+

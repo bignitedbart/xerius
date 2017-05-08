@@ -1,6 +1,6 @@
 package unit;
 
-import be.vdab.DriverDownloader;
+import be.vdab.drivers.DriverDownloader;
 import org.junit.Assert;
 import org.junit.Test;
 

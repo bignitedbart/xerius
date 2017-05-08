@@ -1,6 +1,6 @@
 package browser;
 
-import be.vdab.chromedriver.ChromeDriverUpdater;
+import be.vdab.drivers.chromedriver.ChromeDriverUpdater;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;

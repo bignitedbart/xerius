@@ -66,4 +66,6 @@ public class PropertiesLoader {
     public String getIePrefix(){ return properties.getProperty("FILENAME_PREFIX_IE");}
 
     public String getIeSuffix(){ return properties.getProperty("FILENAME_SUFFIX_IE");}
+
+    public String getGeckoDriverBaseUrl(){ return properties.getProperty("geckodriver.base.url");}
 }
