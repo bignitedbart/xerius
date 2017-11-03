@@ -1,8 +1,6 @@
 package be.vdab.drivers.iedriver;
-
-import be.vdab.utilities.Unzipper;
+import be.vdab.utilities.Extractor;
 import org.apache.commons.io.FileUtils;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -13,21 +11,21 @@ public class IeDriverUnzipper {
     private final String FILENAME = "IEDriverServer.exe";
     private File zip;
     private File binary;
-    private Unzipper unzipper;
+    private Extractor extractor;
 
     public IeDriverUnzipper() {
-        unzipper = new Unzipper();
+        extractor   = new Extractor();
         zip = new File(SOURCE);
         binary = new File(DESTINATION + FILENAME);
     }
 
     public void unzipIedriver() throws IOException {
         if (!zip.exists()) {
-            throw new RuntimeException("Zip-file " + SOURCE + " does not exist!");
+            throw new RuntimeException("Zip-file " + zip + " does not exist!");
         }
         if (binary.exists()) {
             FileUtils.forceDelete(binary);
         }
-        unzipper.unZipIt(SOURCE, DESTINATION);
+        extractor.extract(zip, DESTINATION);
     }
 }

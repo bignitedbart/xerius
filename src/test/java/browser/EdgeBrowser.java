@@ -24,7 +24,6 @@ public class EdgeBrowser implements Browser {
         new EdgeDriverUpdater().updateEdgeDriverToLatest();
         setDriver();
     }
-
     private void buildEdgeDriverService() {
         if (null == edgeDriverService) {
             LOGGER.info("Building EdgeDriver service ...");

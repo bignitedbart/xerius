@@ -56,7 +56,7 @@ public class FirefoxBrowser implements Browser {
         }
         if (null == remoteWebDriver) {
             remoteWebDriver = new RemoteWebDriver(geckoDriverService.getUrl(), buildDesiredCapabilities());
-            maximizeBrowserWindow(remoteWebDriver);
+            maximizeBrowserWindow();
         }
     }
 
@@ -81,11 +81,16 @@ public class FirefoxBrowser implements Browser {
         if(null != System.getProperty("browsermob")) {
             desiredCapabilities = proxyManager.getDesiredCapabilities();
         }
-        desiredCapabilities.setBrowserName("firefox");
+        desiredCapabilities.setBrowserName("internetExplorer");
         return desiredCapabilities;
     }
 
-    private void maximizeBrowserWindow(RemoteWebDriver driver) {
-        driver.manage().window().maximize();
+    private void maximizeBrowserWindow() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        remoteWebDriver.manage().window().maximize();
     }
 }

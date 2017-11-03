@@ -1,6 +1,7 @@
 package browser;
 
 import be.vdab.drivers.chromedriver.ChromeDriverUpdater;
+import be.vdab.drivers.iedriver.IeDriverUpdater;
 import org.openqa.selenium.ie.InternetExplorerDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -22,13 +23,13 @@ public class InternetExplorerBrowser implements Browser {
 
     public InternetExplorerBrowser() throws IOException, URISyntaxException {
         proxyManager = new ProxyManager();
-        new ChromeDriverUpdater().updateChromeDriverToLatest();
+        new IeDriverUpdater().updateIeDriverToLatest();
         setDriver();
     }
 
     private void buildInternetExplorerDriverService() {
         if (null == internetexplorerDriverService) {
-            LOGGER.info("Building ChromeDriver service ...");
+            LOGGER.info("Building InternetExplorerDriver service ...");
             internetexplorerDriverService = new InternetExplorerDriverService.Builder()
                     .usingAnyFreePort()
                     .usingDriverExecutable(new File("src/test/resources/IEDriverServer.exe"))
@@ -41,7 +42,7 @@ public class InternetExplorerBrowser implements Browser {
     private void startIEDriverService() {
         if (null != internetexplorerDriverService && !internetexplorerDriverService.isRunning()) {
             try {
-                LOGGER.info("Starting ChromeDriver service ...");
+                LOGGER.info("Starting InternetExplorerDriver service ...");
                 internetexplorerDriverService.start();
             } catch (IOException e) {
                 e.printStackTrace();

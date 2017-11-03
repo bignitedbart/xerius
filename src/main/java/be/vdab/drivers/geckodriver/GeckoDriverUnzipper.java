@@ -1,6 +1,7 @@
 package be.vdab.drivers.geckodriver;
 
-import be.vdab.utilities.Unzipper;
+import be.vdab.utilities.Extractor;
+import be.vdab.utilities.PropertiesLoader;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -8,16 +9,16 @@ import java.io.IOException;
 
 public class GeckoDriverUnzipper {
 
+    PropertiesLoader propertiesLoader = PropertiesLoader.getInstance();
+
     private final String PATH = "src/test/resources/";
-    private final String FILENAME_PREFIX = "geckodriver-";
-    private final String FILENAME_SUFFIX = "-win32";
     private final String VERSION;
-    private Unzipper unzipper;
+    private Extractor extractor;
     private File zip;
     private File binary;
 
     public GeckoDriverUnzipper() throws IOException {
-        unzipper = new Unzipper();
+        extractor = new Extractor();
         VERSION = new GeckoDriverVersionChecker().getVersion();
         zip = new File(getSourceFilePath());
         binary = new File(getDestinationFilePath());
@@ -30,7 +31,7 @@ public class GeckoDriverUnzipper {
         if (binary.exists()) {
             FileUtils.forceDelete(binary);
         }
-        unzipper.unZipIt(getSourceFilePath(), getDestinationFilePath());
+        extractor.extract(zip, getDestinationFilePath());
     }
 
     private String getSourceFilePath() {
@@ -42,10 +43,10 @@ public class GeckoDriverUnzipper {
     }
 
     private String getZipFilename() {
-        return FILENAME_PREFIX + VERSION + FILENAME_SUFFIX + ".zip";
+        return  propertiesLoader.getFirefoxPrefix() + VERSION + propertiesLoader.getFirefoxSuffix();
     }
 
     private String getBinaryFileName() {
-        return FILENAME_PREFIX + VERSION + FILENAME_SUFFIX + ".exe";
+        return propertiesLoader.getFirefoxPrefix().replace("-","")+".exe";
     }
 }

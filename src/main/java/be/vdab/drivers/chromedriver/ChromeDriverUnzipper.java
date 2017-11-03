@@ -1,6 +1,6 @@
 package be.vdab.drivers.chromedriver;
 
-import be.vdab.utilities.Unzipper;
+import be.vdab.utilities.Extractor;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -13,10 +13,10 @@ public class ChromeDriverUnzipper {
     private final String FILENAME = "chromedriver.exe";
     private File zip;
     private File binary;
-    private Unzipper unzipper;
+    private Extractor extractor;
 
     public ChromeDriverUnzipper() {
-        unzipper = new Unzipper();
+        extractor = new Extractor();
         zip = new File(SOURCE);
         binary = new File(DESTINATION + FILENAME);
     }
@@ -28,6 +28,6 @@ public class ChromeDriverUnzipper {
         if (binary.exists()) {
             FileUtils.forceDelete(binary);
         }
-        unzipper.unZipIt(SOURCE, DESTINATION);
+        extractor.extract(zip, DESTINATION);
     }
 }
