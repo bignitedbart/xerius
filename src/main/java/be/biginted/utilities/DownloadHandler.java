@@ -1,4 +1,4 @@
-package be.vdab.utilities;
+package be.biginted.utilities;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;

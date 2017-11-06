@@ -1,7 +1,7 @@
-package be.vdab.drivers.geckodriver;
+package be.biginted.drivers.geckodriver;
 
-import be.vdab.utilities.Extractor;
-import be.vdab.utilities.PropertiesLoader;
+import be.biginted.utilities.Extractor;
+import be.biginted.utilities.PropertiesLoader;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;

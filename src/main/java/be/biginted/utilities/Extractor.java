@@ -1,4 +1,4 @@
-package be.vdab.utilities;
+package be.biginted.utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.rauschig.jarchivelib.ArchiveFormat;

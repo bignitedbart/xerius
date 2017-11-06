@@ -1,4 +1,4 @@
-import be.vdab.utilities.ScreenshotOnFailure;
+import be.biginted.utilities.ScreenshotOnFailure;
 import browser.EdgeBrowser;
 import org.junit.After;
 import org.junit.Before;

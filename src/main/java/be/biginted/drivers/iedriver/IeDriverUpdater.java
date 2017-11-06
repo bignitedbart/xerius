@@ -1,6 +1,6 @@
-package be.vdab.drivers.iedriver;
+package be.biginted.drivers.iedriver;
 
-import be.vdab.drivers.DriverDownloader;
+import be.biginted.utilities.DriverDownloader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.IOException;

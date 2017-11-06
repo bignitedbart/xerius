@@ -1,6 +1,6 @@
-package be.vdab.drivers.geckodriver;
+package be.biginted.drivers.geckodriver;
 
-import be.vdab.drivers.DriverDownloader;
+import be.biginted.utilities.DriverDownloader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

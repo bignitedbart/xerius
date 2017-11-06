@@ -1,6 +1,6 @@
 package unit;
 
-import be.vdab.drivers.chromedriver.ChromeDriverVersionChecker;
+import be.biginted.drivers.chromedriver.ChromeDriverVersionChecker;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

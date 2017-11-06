@@ -1,7 +1,7 @@
-package be.vdab.drivers.geckodriver;
+package be.biginted.drivers.geckodriver;
 
-import be.vdab.utilities.DownloadHandler;
-import be.vdab.utilities.PropertiesLoader;
+import be.biginted.utilities.DownloadHandler;
+import be.biginted.utilities.PropertiesLoader;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

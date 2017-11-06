@@ -1,6 +1,6 @@
 package browser;
 
-import be.vdab.drivers.geckodriver.GeckoDriverUpdater;
+import be.biginted.drivers.geckodriver.GeckoDriverUpdater;
 import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;

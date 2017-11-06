@@ -1,22 +1,15 @@
-import be.vdab.utilities.ScreenshotOnFailure;
+import be.biginted.utilities.ScreenshotOnFailure;
 import browser.ChromeBrowser;
-import org.apache.commons.io.FileUtils;
 import org.junit.*;
-import org.junit.rules.TestRule;
-import org.junit.rules.TestWatcher;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.SeleniumScreenRecorder;
 
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Arrays;
 
 public class ChromeTest{
 
@@ -41,14 +34,15 @@ public class ChromeTest{
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("Results")));
     }
 
+    @Rule
+    public ScreenshotOnFailure failure = new ScreenshotOnFailure(driver);
 
-    @After
-    public void teardown() throws IOException {
+
+    @AfterClass
+    public static void teardown() throws IOException {
         seleniumScreenRecorder.stopRecording();
         chromeBrowser.killDriver();
 
     }
 
-    @Rule
-    public ScreenshotOnFailure failure = new ScreenshotOnFailure(driver);
 }

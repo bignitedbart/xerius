@@ -1,6 +1,6 @@
 package unit;
 
-import be.vdab.drivers.geckodriver.GeckoDriverVersionChecker;
+import be.biginted.drivers.geckodriver.GeckoDriverVersionChecker;
 import org.junit.Assert;
 import org.junit.Test;
 

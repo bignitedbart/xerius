@@ -1,6 +1,6 @@
 package unit;
 
-import be.vdab.drivers.iedriver.IeDriverUnzipper;
+import be.biginted.drivers.iedriver.IeDriverUnzipper;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

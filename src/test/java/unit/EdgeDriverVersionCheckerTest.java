@@ -1,6 +1,6 @@
 package unit;
 
-import be.vdab.drivers.edgedriver.EdgeDriverVersionChecker;
+import be.biginted.drivers.edgedriver.EdgeDriverVersionChecker;
 import org.junit.Assert;
 import org.junit.Test;
 

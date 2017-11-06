@@ -1,6 +1,6 @@
 package unit;
 
-import be.vdab.drivers.chromedriver.ChromeDriverUnzipper;
+import be.biginted.drivers.chromedriver.ChromeDriverUnzipper;
 import org.junit.Assert;
 import org.junit.Test;
 

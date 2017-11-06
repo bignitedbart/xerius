@@ -1,4 +1,4 @@
-package be.vdab.utilities;
+package be.biginted.utilities;
 
 import java.io.File;
 import java.io.FileOutputStream;

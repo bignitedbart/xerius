@@ -1,7 +1,7 @@
-package be.vdab.drivers.iedriver;
+package be.biginted.drivers.iedriver;
 
-import be.vdab.utilities.DownloadHandler;
-import be.vdab.utilities.PropertiesLoader;
+import be.biginted.utilities.DownloadHandler;
+import be.biginted.utilities.PropertiesLoader;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;

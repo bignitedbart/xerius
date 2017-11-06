@@ -1,6 +1,6 @@
 package utilities;
 
-import be.vdab.utilities.PropertiesLoader;
+import be.biginted.utilities.PropertiesLoader;
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;

@@ -1,7 +1,6 @@
 package unit;
 
-import be.vdab.drivers.iedriver.IeDriverVersionChecker;
-import org.junit.Ignore;
+import be.biginted.drivers.iedriver.IeDriverVersionChecker;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

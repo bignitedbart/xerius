@@ -1,6 +1,6 @@
 package browser;
 
-import be.vdab.drivers.edgedriver.EdgeDriverUpdater;
+import be.biginted.drivers.edgedriver.EdgeDriverUpdater;
 import org.openqa.selenium.edge.EdgeDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;

@@ -1,12 +1,10 @@
-package be.vdab.drivers;
+package be.biginted.utilities;
 
 
-import be.vdab.drivers.chromedriver.ChromeDriverVersionChecker;
-import be.vdab.drivers.edgedriver.EdgeDriverVersionChecker;
-import be.vdab.drivers.geckodriver.GeckoDriverVersionChecker;
-import be.vdab.drivers.iedriver.IeDriverVersionChecker;
-import be.vdab.utilities.DownloadHandler;
-import be.vdab.utilities.PropertiesLoader;
+import be.biginted.drivers.chromedriver.ChromeDriverVersionChecker;
+import be.biginted.drivers.edgedriver.EdgeDriverVersionChecker;
+import be.biginted.drivers.geckodriver.GeckoDriverVersionChecker;
+import be.biginted.drivers.iedriver.IeDriverVersionChecker;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

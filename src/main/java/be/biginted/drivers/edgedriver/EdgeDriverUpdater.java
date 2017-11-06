@@ -1,6 +1,6 @@
-package be.vdab.drivers.edgedriver;
+package be.biginted.drivers.edgedriver;
 
-import be.vdab.drivers.DriverDownloader;
+import be.biginted.utilities.DriverDownloader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

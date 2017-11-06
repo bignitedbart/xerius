@@ -1,6 +1,6 @@
-package be.vdab.drivers.edgedriver;
+package be.biginted.drivers.edgedriver;
 
-import be.vdab.utilities.PropertiesLoader;
+import be.biginted.utilities.PropertiesLoader;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
