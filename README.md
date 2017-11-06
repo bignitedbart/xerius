@@ -9,7 +9,9 @@ Volgende features zijn geïmplementeerd:
 - Slf4j-over-log4j support
 - Browsermob proxy
 - Screen recording
-- Automatisch updaten van chromedriver
+- Automatisch updaten van chromedriver, Iedriver,Geckodriver,edgedriver voor verschillende bit systemen
+- Unzippen van verschillende zip formaten
+- Screenshot only on test failure
 
 Alle drivers maken gebruik van de gerelateerde services om het spawnen van nieuwe browserinstanties te versnellen.
 Er wordt zoveel mogelijk gebruik gemaakt van composition over inheritance om de onderhoudbaarheid te verhogen.
