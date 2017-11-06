@@ -3,12 +3,8 @@ package be.biginted.utilities;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.UUID;
 import org.apache.commons.io.FileUtils;
-import org.apache.http.client.utils.DateUtils;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
@@ -19,7 +15,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class ScreenshotOnFailure  implements MethodRule{
 
     private RemoteWebDriver driver;
-    private String saveLocation = "user.home";
 
 
     public ScreenshotOnFailure(RemoteWebDriver driver){
@@ -42,7 +37,7 @@ public class ScreenshotOnFailure  implements MethodRule{
 
             public void captureScreenShot() throws IOException {
                 File scrFile = driver.getScreenshotAs(OutputType.FILE);
-                FileUtils.copyFile(scrFile, new File(System.getProperty(saveLocation)+"\\"+ LocalDateTime.now()+".png"));
+                FileUtils.copyFile(scrFile, new File((System.getProperty("user.home"))+"\\"+ LocalDateTime.now()+".png"));
             }
         };
     }
