@@ -1,25 +1,32 @@
+import be.vdab.utilities.ScreenshotOnFailure;
 import browser.ChromeBrowser;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.apache.commons.io.FileUtils;
+import org.junit.*;
+import org.junit.rules.TestRule;
+import org.junit.rules.TestWatcher;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.SeleniumScreenRecorder;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
-public class ChromeTest {
+public class ChromeTest{
 
-    private RemoteWebDriver driver;
-    private ChromeBrowser chromeBrowser;
-    private SeleniumScreenRecorder seleniumScreenRecorder;
+    private static RemoteWebDriver driver;
+    private static ChromeBrowser chromeBrowser;
+    private static SeleniumScreenRecorder seleniumScreenRecorder;
 
-    @Before
-    public void setup() throws IOException, AWTException, URISyntaxException {
+
+    @BeforeClass
+    public static void setup() throws IOException, AWTException, URISyntaxException {
         chromeBrowser = new ChromeBrowser();
         seleniumScreenRecorder = new SeleniumScreenRecorder();
         seleniumScreenRecorder.startRecording();
@@ -34,9 +41,14 @@ public class ChromeTest {
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("Results")));
     }
 
+
     @After
     public void teardown() throws IOException {
         seleniumScreenRecorder.stopRecording();
         chromeBrowser.killDriver();
+
     }
+
+    @Rule
+    public ScreenshotOnFailure failure = new ScreenshotOnFailure(driver);
 }

@@ -1,6 +1,8 @@
+import be.vdab.utilities.ScreenshotOnFailure;
 import browser.FirefoxBrowser;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -30,4 +32,7 @@ public class FirefoxTest {
     public void teardown() {
         geckoDriverService.killDriver();
     }
+
+    @Rule
+    public ScreenshotOnFailure failure = new ScreenshotOnFailure(driver);
 }

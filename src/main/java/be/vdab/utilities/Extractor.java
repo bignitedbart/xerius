@@ -38,8 +38,6 @@ public class Extractor {
                 ZipEntry zipEntry = (ZipEntry) enu.nextElement();
 
                 String name = zipEntry.getName();
-                long size = zipEntry.getSize();
-                long compressedSize = zipEntry.getCompressedSize();
 
                 file = new File(
                         compressedFile.getParentFile() + File.separator + name);
