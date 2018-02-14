@@ -26,7 +26,7 @@ public class ProxyManager {
             setCorporateProxy(browserMobProxy);
         }
 
-        addHeader(browserMobProxy,"vdabauthorization","cn=VDABCOR1,ou=USERS,ou=INTERN,o=VDAB");
+        addHeader(browserMobProxy,"","");
         startBrowserMobProxy();
         seleniumProxy = createSeleniumProxy(browserMobProxy);
         setProxyCapability(desiredCapabilities, seleniumProxy);

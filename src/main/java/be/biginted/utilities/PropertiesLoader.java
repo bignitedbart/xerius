@@ -29,7 +29,9 @@ public class PropertiesLoader {
         }
     }
 
-    public Boolean isCorporateProxyEnabled() { return Boolean.parseBoolean(properties.getProperty("corporate.proxy.enabled")); }
+    public Boolean isCorporateProxyEnabled() {
+        return Boolean.parseBoolean(properties.getProperty("corporate.proxy.enabled"));
+    }
 
     public String getCorporateProxyHost() {
         return properties.getProperty("corporate.proxy.host");
@@ -43,29 +45,5 @@ public class PropertiesLoader {
         return properties.getProperty("blacklisted.extensions").split(",");
     }
 
-    public String getGeckoDriverReleaseUrl() { return properties.getProperty("geckodriver.release.url"); }
 
-    public String getChromeDriverReleaseUrl() { return properties.getProperty("chromedriver.release.url"); }
-
-    public String getEdgeDriverReleaseUrl() { return properties.getProperty("edgedriver.release.url");}
-
-    public String getChromeDriverBaseUrl(){ return properties.getProperty("chromedriver.base.url");}
-
-    public String getEdgeDriverBaseUrl(){ return properties.getProperty("edgedriver.base.url");}
-
-    public String getIEDriverBaseUrl(){ return properties.getProperty("internetexplorer.base.url");}
-
-    public String getChromePrefix() { return properties.getProperty("FILENAME_PREFIX_CHROME");}
-
-    public String getChromeSuffix() { return properties.getProperty("FILENAME_SUFFIX_CHROME");}
-
-    public String getFirefoxSuffix() { return properties.getProperty("FILENAME_SUFFIX_FIREFOX");}
-
-    public String getFirefoxPrefix() { return properties.getProperty("FILENAME_PREFIX_FIREFOX");}
-
-    public String getIePrefix(){ return properties.getProperty("FILENAME_PREFIX_IE");}
-
-    public String getIeSuffix(){ return properties.getProperty("FILENAME_SUFFIX_IE");}
-
-    public String getGeckoDriverBaseUrl(){ return properties.getProperty("geckodriver.base.url");}
 }

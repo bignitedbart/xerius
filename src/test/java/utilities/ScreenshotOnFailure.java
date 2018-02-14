@@ -1,9 +1,9 @@
-package be.biginted.utilities;
+package utilities;
 
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import org.apache.commons.io.FileUtils;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
@@ -37,7 +37,7 @@ public class ScreenshotOnFailure  implements MethodRule{
 
             public void captureScreenShot() throws IOException {
                 File scrFile = driver.getScreenshotAs(OutputType.FILE);
-                FileUtils.copyFile(scrFile, new File((System.getProperty("user.home"))+"\\"+ LocalDateTime.now()+".png"));
+                FileUtils.copyFile(scrFile, new File((System.getProperty("user.home"))+"\\"+ LocalDate.now() + ".png"));
             }
         };
     }
